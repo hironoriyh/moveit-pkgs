@@ -10,12 +10,14 @@ skip_objects: "ground_plane"
 # be set to allow collisions with the new object and
 # all of the links listed below.
 # Specify as comma or space separated list.
-allowed_collision_links: "table_top"    
+allowed_collision_links:
+  -"table_top"
+  -"table_leg"
 
 # Instead of publishing on the MoveIt! collision object topic,
 # publish a planning scene diff with the new/updated MoveIt!
 # collision objects.
-# This works better if set to true at the moment, because 
+# This works better if set to true at the moment, because
 # MoveIt! sometimes misses a message when using the message-publishing
 # (instead of planning-scene-diff) method.
 use_planning_scene_diff: true
@@ -37,5 +39,5 @@ publish_collision_rate: 10
 world_objects_topic: "/gazebo_objects"
 
 # Service name on which object_msgs/ObjectInfo.srv object information
-# can be requested. 
+# can be requested.
 request_object_service: "/gazebo_objects/get_info"
